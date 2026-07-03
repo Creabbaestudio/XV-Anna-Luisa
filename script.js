@@ -1,15 +1,26 @@
-document.getElementById("abrir").onclick=function(){
+document.getElementById("abrir").addEventListener("click", function () {
 
-document.querySelector(".envoltura").classList.add("abierto");
+    document.querySelector(".envoltura").classList.add("abierto");
 
-setTimeout(function(){
+    setTimeout(function(){
 
-document.getElementById("sobre").style.display="none";
+        document.getElementById("sobre").style.opacity="0";
 
-document.getElementById("contenido").style.display="block";
+        setTimeout(function(){
 
-window.scrollTo(0,0);
+            document.getElementById("sobre").style.display="none";
 
-},1200);
+            const contenido=document.getElementById("contenido");
 
-}
+            contenido.classList.add("mostrar");
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        },700);
+
+    },1000);
+
+});
