@@ -173,9 +173,16 @@ color:#555;
 }
 
 #contenido{
+opacity:0;
+visibility:hidden;
+transform:translateY(40px);
+transition:1s ease;
+}
 
-display:none;
-
+#contenido.mostrar{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
 }
 
 .hero{
