@@ -1,19 +1,15 @@
-const fechaEvento = new Date("August 15, 2026 18:00:00").getTime();
+document.getElementById("abrir").onclick=function(){
 
-setInterval(() => {
+document.querySelector(".envoltura").classList.add("abierto");
 
-const ahora = new Date().getTime();
+setTimeout(function(){
 
-const diferencia = fechaEvento - ahora;
+document.getElementById("sobre").style.display="none";
 
-const dias = Math.floor(diferencia / (1000*60*60*24));
-const horas = Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
-const minutos = Math.floor((diferencia%(1000*60*60))/(1000*60));
-const segundos = Math.floor((diferencia%(1000*60))/1000);
+document.getElementById("contenido").style.display="block";
 
-document.getElementById("dias").innerHTML=dias;
-document.getElementById("horas").innerHTML=horas;
-document.getElementById("minutos").innerHTML=minutos;
-document.getElementById("segundos").innerHTML=segundos;
+window.scrollTo(0,0);
 
-},1000);
+},1200);
+
+}
